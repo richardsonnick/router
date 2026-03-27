@@ -132,11 +132,11 @@ global
   {{- end }}
 
   # The user can provide a set of default supported groups using the ROUTER_CURVES variable.
-  # By default X25519MLKEM768, X25519, and P-256 are used.
+  # By default X25519, and P-256 are used.
   {{- with (env "ROUTER_CURVES") }}
   ssl-default-bind-curves {{ . }}
   {{- else }}
-  ssl-default-bind-curves X25519MLKEM768:X25519:P-256
+  ssl-default-bind-curves X25519:P-256
   {{- end }}
 
 defaults
